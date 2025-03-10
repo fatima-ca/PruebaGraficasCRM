@@ -17,8 +17,96 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+
+body{
+  --c1: #6b6bd6;
+  --c2: #e74f4f;
+  --c3: #fc921f;
+
+  color: #222;
+  background-color: #fff;
+  padding-block: 2rem 3 rem;
 }
+
+main{
+  max-width: 90%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+
+.charts{
+  display: flex;
+  place-content: center;
+  flex-flow: wrap;
+  gap: 2rem;
+}
+
+.pie{
+  flex: 1 0 225px;
+  max-width: 325px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /*border: 1px solid;*/
+
+  background-image: 
+      conic-gradient(from 30deg,
+        var(--c1) 40%,
+        var(--c2) 0 65%,
+        var(--c3) 0
+      );
+}
+
+.donut{
+  background-image: 
+  radial-gradient(
+    white 0 40%,
+    transparent 40% 70%,
+    white 70%
+  ),
+      conic-gradient(from 30deg,
+        var(--c1) 40%,
+        var(--c2) 0 65%,
+        var(--c3) 0
+      );
+}
+
+.legends{
+  margin-block-end: 2rem;
+  font-size: 0.9rem;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 1rem;
+}
+
+.legends span{
+  position: relative;
+  padding-inline-start: 1.25rem;
+}
+
+.legends span::before{
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  content: '';
+  width: 0.8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.legends span:nth-child(2)::before{
+  background-color: var(--c2);
+}
+
+.legends span:nth-child(1)::before{
+  background-color: var(--c1);
+}
+
+.legends span:nth-child(3)::before{
+  background-color: var(--c3);
+}
+
